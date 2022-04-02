@@ -39,7 +39,7 @@ for CKSheetName,RibaoSheetName in data:
     df_Neibu = pd.DataFrame(columns=ribao_columns)
     LastDF = DF_Neibuzhijian[DF_Neibuzhijian.日期==Lastupdate]
     df_Neibu['一检质检时间'] = LastDF['日期']
-    df_Neibu['会话生成时间'] = [i.strftime('%m-%d') for i in LastDF['会话生成时间']]
+    df_Neibu['会话生成时间'] = [i.strftime('%Y/%m/%d') for i in LastDF['会话生成时间']]
     df_Neibu['客服姓名'] = LastDF['客服姓名']
     df_Neibu['一检总分'] = LastDF['及格']
     df_paiban = pd.read_excel(ribaopath,sheet_name=paiban_sheetname)

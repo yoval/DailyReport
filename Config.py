@@ -4,6 +4,7 @@ Created on Mon Mar  7 16:37:01 2022
 
 @author: Administrator
 """
+
 import configparser, glob,os
 
 conf = configparser.ConfigParser()
@@ -45,6 +46,7 @@ def get_yanmanpath():
     return yanmanpath
 #通过创建者名字获得BPO
 def getBPO(name):
+    name = str(name) #防止为nan事报错
     if '春客' in name:
         BPO = '春客'
     elif '软通' in name:
